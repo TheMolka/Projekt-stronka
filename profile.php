@@ -11,7 +11,7 @@ if(isset($_GET['profileID'])) {
 
 //kwerenda pobiera jeden profil z tabeli po jego id
 $sql = "SELECT * FROM profile 
-        LEFT JOIN photo ON profile.profilePhotoID = photo.ID
+        LEFT JOIN photo ON profile.profilePhotoD = photo.ID
         WHERE profile.ID=? 
         LIMIT 1";
 
