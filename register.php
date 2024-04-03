@@ -11,7 +11,7 @@
 
 <div class="container">
         <div class="row text-center mt-5">
-            <h1>Logowanie</h1>
+            <h1>Rejestracja</h1>
         </div>
         <div class="row">
             <form action="login.php">
@@ -21,8 +21,23 @@
                 </div>
                 <div class="mb-3 col-4 offset-4">
                     <label class="form-label" for="passwordInput">Hasło:</label>
-                    <input class="form-controll w-100" type="password" name="passwordInput" id="emailInput">
+                    <input class="form-controll w-100" type="password" name="password" id="passwordInput">
                 </div>
+                <div class="mb-3 col-4 offset-4">
+                    <label class="form-label" for="repeatPasswordInput">Powtórz hasło:</label>
+                    <input class="form-controll w-100" type="repeatPassword" name="repeatPassword" id="repeatPasswordInput">
+                </div>
+                
+                <div class="row">
+                <input type="checkbox" id="checkbox">
+                </div>
+                <div class="text-center mb-3 col-4 offset-4">
+                    <label class="form-label" for="checkbox">potwierdź</label>
+                    
+                </div>
+                
+              
+                
                 <div class="mb-3 col-4 offset-4">
                     <button type="submit" class="btn btn-primary w-100">Zaloguj</button>
                 </div>
