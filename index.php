@@ -2,24 +2,6 @@
 require_once('class/User.class.php');
 require_once('class/Profile.class.php');
 session_start();
-
-if(isset($_REQUEST['profileID'])) {
-    $profileID = $_REQUEST['profileID'];
-    $p = Profile::Get($profileID);
-} else {
-    if(isset($_SESSION['user'])) {
-        //jest zalogowany użytkownik - pokaż jego profil
-        //załaduj profil zalogowanego użytkownika
-        $p = Profile::GetUserProfile($_SESSION['user']->GetID());
-    } else {
-        //pokaż domyślny profil
-        $p = Profile::Get(3);
-    }
-    
-}
-    
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -35,19 +17,28 @@ if(isset($_REQUEST['profileID'])) {
 
 <body>
 <div class="banner">
-<a href="index.php">
-<button class="btn btn-primary">Strona główna</button>
+<a href="login.php">
+<button class="btn btn-primary">Logowanie</button>
 </a>
+<a href="register.php">
+<button class="btn btn-primary">Rejestracja</button>
+</a>
+<a href="profile.php">
+<button class="btn btn-primary">Profil</button>
+</a>
+<br>
 </div>
+<div class="profile">
+<?php
 
-
-
-<div class="profil">
-<h1>Profil użytkownika</h1>
-<?php echo $p->getFullName(); ?><br>
-
-Zdjęcie profilowe: <br> <img src="<?php echo $p->getProfilePhotoURL(); ?>">
+$profiles = Profile::GetAll();
+foreach ($profiles as $profile) {
+    echo '<img src="'.$profile->getProfilePhotoURL().'" style="height: 200px">';
+    echo "<br>";
+    echo $profile->getFullName();
+    echo "<br>";
+}
+?>
 </div>
-
 </body>
 </html>

@@ -1,0 +1,28 @@
+div.banner{
+    text-align: left;
+    background-color: aqua;
+    height: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    font-family: 'Comic Sans MS';
+   
+}
+
+div.profile{
+    background-color: aquamarine;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    padding-top: 10px;
+    
+    
+}
+
+div.profil{
+    
+    background-color: aquamarine;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Comic Sans MS';
+}
+
